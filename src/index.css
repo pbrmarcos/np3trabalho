@@ -1,0 +1,830 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WebQ Design System - Neo-Corporate Trust (Swiss Digital Modernism)
+   All colors MUST be HSL. */
+
+@layer base {
+  :root {
+    /* Light Mode - Clean & Professional (White & Electric Blue) */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Deep Navy Blue - Primary */
+    --primary: 222 47% 20%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Ice White - Secondary */
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222 47% 20%;
+
+    --muted: 210 25% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Electric Blue - Accent */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 87%;
+    --input: 214 32% 87%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.25rem;
+
+    /* Sidebar */
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 47% 20%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 20% 97%;
+    --sidebar-accent-foreground: 222 47% 20%;
+    --sidebar-border: 214 32% 87%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Chart colors */
+    --chart-1: 222 47% 20%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 220 14% 46%;
+    --chart-4: 220 20% 70%;
+    --chart-5: 214 32% 91%;
+
+    /* Custom WebQ tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(222 47% 20%) 0%, hsl(217 91% 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100% / 0.5) 0%, hsl(0 0% 100% / 0.9) 50%, hsl(0 0% 100%) 100%);
+    
+    --shadow-sm: 0 1px 3px 0 hsl(222 47% 11% / 0.08), 0 1px 2px -1px hsl(222 47% 11% / 0.06);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.12), 0 2px 4px -2px hsl(222 47% 11% / 0.08);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.15), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-primary: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.2);
+  }
+
+  .dark {
+    /* Dark Mode - Deep Navy */
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Electric Blue becomes primary in dark */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 8%;
+
+    /* Dark Navy */
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 220 14% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 217 91% 60%;
+
+    /* Sidebar Dark */
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Chart colors Dark */
+    --chart-1: 217 91% 60%;
+    --chart-2: 217 91% 70%;
+    --chart-3: 220 14% 65%;
+    --chart-4: 220 20% 50%;
+    --chart-5: 222 30% 25%;
+
+    /* Custom WebQ tokens Dark */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 70%) 0%, hsl(217 91% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 8% / 0.3) 0%, hsl(222 47% 8% / 0.8) 50%, hsl(222 47% 8%) 100%);
+    
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4), 0 4px 6px -4px hsl(0 0% 0% / 0.3);
+    --shadow-primary: 0 10px 30px -10px hsl(217 91% 60% / 0.4);
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+/* Portfolio Scroll Animations - must be in global CSS for inline styles to work */
+@keyframes portfolio-scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-33.33%); }
+}
+
+@keyframes portfolio-scroll-down {
+  0% { transform: translateY(-33.33%); }
+  100% { transform: translateY(0); }
+}
+
+@layer utilities {
+  /* Glass morphism utility */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md border-border;
+  }
+
+  /* Text gradient utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  /* Swiss grid lines */
+  .grid-lines {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+/* Blog & Help Content Styling - Override inline styles for theme compatibility */
+
+/* Callout boxes with background */
+.blog-content div[style*="background"],
+.help-content div[style*="background"] {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  background-color: hsl(var(--muted)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 0.75rem !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 2rem 0 !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Reset margins inside callout boxes for proper vertical centering */
+.blog-content div[style*="background"] p,
+.blog-content div[style*="background"] span,
+.help-content div[style*="background"] p,
+.help-content div[style*="background"] span {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.blog-content div[style*="background"] a,
+.help-content div[style*="background"] a {
+  color: hsl(var(--primary)) !important;
+  font-weight: 500 !important;
+}
+
+.blog-content div[style*="background"] strong,
+.help-content div[style*="background"] strong {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Emoji icons in callout boxes */
+.blog-content div[style*="background"] span[style*="font-size"],
+.help-content div[style*="background"] span[style*="font-size"] {
+  font-size: 1.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* Override ALL inline color styles to use theme-compatible primary - except plan buttons */
+.blog-content span[style*="color"],
+.blog-content a[style*="color"]:not(.plan-button),
+.help-content span[style*="color"],
+.help-content a[style*="color"]:not(.plan-button) {
+  color: hsl(var(--primary)) !important;
+}
+
+/* Keep strong text as foreground color, not primary */
+.blog-content strong[style*="color"],
+.help-content strong[style*="color"] {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Links in regular text - except plan buttons */
+.blog-content a:not(.plan-button),
+.help-content a:not(.plan-button) {
+  color: hsl(var(--primary)) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.blog-content a:not(.plan-button):hover,
+.help-content a:not(.plan-button):hover {
+  text-decoration: underline !important;
+}
+
+/* Plan buttons in blog content - preserve their styling */
+.blog-content a.plan-button {
+  text-decoration: none !important;
+}
+
+.blog-content a.plan-button:hover {
+  opacity: 0.9 !important;
+  text-decoration: none !important;
+}
+
+/* Plan cards in blog - preserve all their inline styles */
+.blog-content .plan-card,
+.blog-content .plan-card * {
+  color: inherit !important;
+}
+
+.blog-content .plan-card span[style*="color"] {
+  color: inherit !important;
+}
+
+.blog-content .plan-card h3 {
+  font-size: inherit !important;
+  margin: inherit !important;
+  padding: inherit !important;
+  border: none !important;
+  color: inherit !important;
+}
+
+.blog-content .plan-card p {
+  margin: inherit !important;
+  line-height: inherit !important;
+}
+
+.blog-content .plan-card div {
+  margin: inherit !important;
+}
+
+/* Ensure paragraphs have proper spacing */
+.blog-content p,
+.help-content p {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.8 !important;
+}
+
+/* Inline strong within paragraphs - just make it bold, don't transform to block */
+.blog-content p strong,
+.help-content p strong {
+  font-weight: 700 !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Lists with proper bullets and spacing */
+.blog-content ul,
+.help-content ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+.blog-content ol,
+.help-content ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+.blog-content li,
+.help-content li {
+  margin-bottom: 0.75rem !important;
+  padding-left: 0.5rem !important;
+}
+
+.blog-content li::marker,
+.help-content li::marker {
+  color: hsl(var(--primary)) !important;
+}
+
+/* Make headings more prominent */
+.blog-content h2,
+.help-content h2 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.blog-content h3,
+.help-content h3 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Better blockquote styling */
+.blog-content blockquote,
+.help-content blockquote {
+  border-left: 4px solid hsl(var(--primary)) !important;
+  padding: 1rem 1.5rem !important;
+  margin: 2rem 0 !important;
+  background: hsl(var(--muted) / 0.5) !important;
+  border-radius: 0 0.5rem 0.5rem 0 !important;
+}
+
+/* Horizontal rule for section breaks */
+.blog-content hr,
+.help-content hr {
+  margin: 3rem 0 !important;
+  border-color: hsl(var(--border)) !important;
+}
+
+/* Help Content Specific - Tables */
+.help-content table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1.5rem 0 !important;
+  background-color: hsl(var(--card)) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+  border: 1px solid hsl(var(--border)) !important;
+}
+
+.help-content table th {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--foreground)) !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1rem !important;
+  text-align: left !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+}
+
+.help-content table td {
+  padding: 0.75rem 1rem !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+  background-color: hsl(var(--card)) !important;
+}
+
+/* Force text visibility inside table cells */
+.help-content table td,
+.help-content table td *:not(span[style*="background"]) {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Preserve badge styling in tables */
+.help-content table td span[style*="background"][style*="border-radius"] {
+  color: white !important;
+}
+
+.help-content table tr:last-child td {
+  border-bottom: none !important;
+}
+
+.help-content table tr:hover td {
+  background-color: hsl(var(--muted) / 0.5) !important;
+}
+
+/* Help Content - Cards/Boxes with inline white backgrounds */
+.help-content div[style*="background: white"],
+.help-content div[style*="background-color: white"],
+.help-content div[style*="background:#fff"],
+.help-content div[style*="background-color:#fff"],
+.help-content div[style*="background: #fff"],
+.help-content div[style*="background-color: #fff"],
+.help-content div[style*="background: rgb(255"],
+.help-content div[style*="background-color: rgb(255"] {
+  background-color: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Help Content - Step boxes (numbered steps) - like the migration article */
+.help-content div[style*="border-radius"][style*="padding"] {
+  background-color: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+  transition: all 0.2s ease !important;
+}
+
+.help-content div[style*="border-radius"][style*="padding"]:hover {
+  border-color: hsl(var(--primary) / 0.3) !important;
+}
+
+/* Help Content - Feature cards with flex layout (icon + text) - top level only */
+.help-content > div[style*="display: flex"],
+.help-content > div[style*="display:flex"] {
+  background-color: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 0.75rem !important;
+  color: hsl(var(--foreground)) !important;
+  transition: all 0.2s ease !important;
+}
+
+.help-content > div[style*="display: flex"]:hover,
+.help-content > div[style*="display:flex"]:hover {
+  border-color: hsl(var(--primary) / 0.3) !important;
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.08) !important;
+}
+
+/* Step boxes - card containers with number inside */
+.help-content > div[style*="border-radius"][style*="padding"][style*="margin"] {
+  background-color: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 0.75rem !important;
+  color: hsl(var(--foreground)) !important;
+  transition: all 0.2s ease !important;
+}
+
+.help-content > div[style*="border-radius"][style*="padding"][style*="margin"]:hover {
+  border-color: hsl(var(--primary) / 0.3) !important;
+}
+
+/* Step number circles - must be blue with white text */
+.help-content div[style*="border-radius"][style*="width"][style*="height"][style*="display: flex"][style*="align-items"],
+.help-content div[style*="border-radius"][style*="width"][style*="height"][style*="background"] {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  border: none !important;
+  border-radius: 50% !important;
+}
+
+/* Nested flex containers inside cards should be transparent */
+.help-content div[style*="border-radius"][style*="padding"] > div[style*="display: flex"],
+.help-content div[style*="border-radius"][style*="padding"] > div[style*="display:flex"] {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Help Content - Grid cards */
+.help-content div[style*="display: grid"] > div,
+.help-content div[style*="display:grid"] > div {
+  background-color: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+  transition: all 0.2s ease !important;
+  border-radius: 0.75rem !important;
+  padding: 1rem !important;
+}
+
+.help-content div[style*="display: grid"] > div:hover,
+.help-content div[style*="display:grid"] > div:hover {
+  border-color: hsl(var(--primary) / 0.3) !important;
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.08) !important;
+}
+
+/* Grid cards - internal content should be transparent */
+.help-content div[style*="display: grid"] > div > div,
+.help-content div[style*="display:grid"] > div > div {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Help Content - Preserve colored backgrounds for alerts/callouts */
+.help-content div[style*="background"][style*="border-left"] {
+  border: none !important;
+  border-left: 4px solid hsl(var(--primary)) !important;
+  background-color: hsl(var(--muted)) !important;
+}
+
+/* Help Content - Summary/Resume boxes - FORCE theme colors and compact layout */
+.help-content > div[style*="background"],
+.help-content > div[style*="border-radius"][style*="padding"],
+.help-content div[style*="background"][style*="border-radius"][style*="padding"] {
+  background-color: hsl(var(--card)) !important;
+  background: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+  padding: 20px 24px !important;
+}
+
+/* Summary boxes h2 (Resumo Rápido title) - compact styling */
+.help-content div[style*="border-radius"][style*="padding"] > h2:first-child,
+.help-content div[style*="background"][style*="border-radius"] > h2:first-child {
+  margin: 0 0 8px 0 !important;
+  padding: 0 !important;
+  font-size: 1.1rem !important;
+  border: none !important;
+}
+
+/* Summary boxes p after h2 - no extra margin */
+.help-content div[style*="border-radius"][style*="padding"] > h2:first-child + p,
+.help-content div[style*="background"][style*="border-radius"] > h2:first-child + p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix inner flex containers in info-boxes to remove extra padding */
+.help-content div[style*="background"][style*="border-radius"] > div[style*="display: flex"],
+.help-content div[style*="background"][style*="border-radius"] > div[style*="display:flex"],
+.help-content div[style*="border-radius"][style*="padding"] > div[style*="display: flex"],
+.help-content div[style*="border-radius"][style*="padding"] > div[style*="display:flex"] {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Fix inner divs inside flex that cause extra spacing */
+.help-content div[style*="display: flex"][style*="align-items"] > div,
+.help-content div[style*="display:flex"][style*="align-items"] > div {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Priority indicator circles - preserve original colors */
+.help-content span[style*="background"][style*="border-radius: 50%"],
+.help-content span[style*="background"][style*="border-radius:50%"],
+.help-content div[style*="width: 12px"][style*="height: 12px"],
+.help-content div[style*="width:12px"][style*="height:12px"],
+.help-content div[style*="width: 16px"][style*="height: 16px"],
+.help-content div[style*="width:16px"][style*="height:16px"] {
+  /* Preserve original background colors for status indicators */
+  border: none !important;
+}
+
+/* Time badges in priority cards */
+.help-content div[style*="background"][style*="border-radius"][style*="padding"]:not([style*="display"]) {
+  background-color: hsl(var(--muted)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Help Content - Fix all direct children divs with inline backgrounds to use theme */
+.help-content > div[style],
+.help-content div > div[style*="background"]:not([style*="display: flex"]) {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Help Content - Ensure text inside any styled div is readable */
+.help-content div[style] p,
+.help-content div[style] span:not([style*="font-size"]):not([style*="background"]),
+.help-content div[style] li,
+.help-content div[style] td,
+.help-content div[style] strong,
+.help-content div[style] h3,
+.help-content div[style] h4 {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Help Content - Timeline container styling */
+.help-content div.timeline {
+  border-left-color: hsl(var(--primary)) !important;
+}
+
+/* Help Content - Timeline circles - preserve HTML dimensions, only fix colors */
+.help-content div.timeline div[style*="position: absolute"][style*="border-radius: 50%"],
+.help-content div.timeline div[style*="position: absolute"][style*="border-radius:50%"],
+.help-content div.timeline > div > div[style*="border-radius: 50%"],
+.help-content div.timeline > div > div[style*="border-radius:50%"] {
+  background-color: hsl(var(--primary)) !important;
+  border: none !important;
+  /* Preserve HTML dimensions - do not override width/height */
+}
+
+/* Fix for last timeline item (green circle for "Publicação") */
+.help-content div.timeline div[style*="background: hsl(142"] {
+  background-color: hsl(142 76% 36%) !important;
+}
+
+/* Generic rounded spans in help content - force blue circles with white numbers */
+.help-content span[style*="border-radius: 50%"],
+.help-content span[style*="border-radius:50%"] {
+  border: none !important;
+  background-color: hsl(210 100% 50%) !important;
+  background: hsl(210 100% 50%) !important;
+  color: white !important;
+}
+
+/* Dark mode - ensure numbered circles are blue with white text */
+.dark .help-content span[style*="border-radius: 50%"],
+.dark .help-content span[style*="border-radius:50%"] {
+  background-color: hsl(210 100% 50%) !important;
+  background: hsl(210 100% 50%) !important;
+  color: white !important;
+}
+
+/* Help Content - Colored status badges - preserve colors */
+.help-content span[style*="background"][style*="border-radius"] {
+  font-weight: 600 !important;
+}
+
+/* Help Content - Feature list checkmarks */
+.help-content ul li::marker {
+  color: hsl(var(--primary)) !important;
+}
+
+/* Help Content - Code/monospace elements */
+.help-content code {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--foreground)) !important;
+  padding: 0.2rem 0.4rem !important;
+  border-radius: 0.25rem !important;
+  font-family: monospace !important;
+  font-size: 0.875em !important;
+  border: 1px solid hsl(var(--border)) !important;
+}
+
+/* Help Content - Links */
+.help-content a:not([style*="background"]) {
+  color: hsl(var(--primary)) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  transition: all 0.2s ease !important;
+}
+
+.help-content a:not([style*="background"]):hover {
+  color: hsl(var(--primary) / 0.8) !important;
+}
+
+/* Help Content - Button-style links (preserve their styling) */
+.help-content a[style*="background"][style*="padding"] {
+  display: inline-block !important;
+  transition: all 0.2s ease !important;
+}
+
+.help-content a[style*="background"][style*="padding"]:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Help Content - Info/tip/warning boxes */
+.help-content div[style*="padding"][style*="margin"] {
+  background-color: hsl(var(--muted)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Help Content - Preserve emoji/icon styling */
+.help-content span[style*="font-size: 1.5"],
+.help-content span[style*="font-size:1.5"],
+.help-content span[style*="font-size: 2"],
+.help-content span[style*="font-size:2"] {
+  display: inline-block !important;
+}
+
+/* Help Content - Icon containers in feature cards */
+.help-content div[style*="font-size: 24px"],
+.help-content div[style*="font-size:24px"],
+.help-content div[style*="font-size: 28px"],
+.help-content div[style*="font-size:28px"],
+.help-content div[style*="font-size: 32px"],
+.help-content div[style*="font-size:32px"] {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Help Content - Title inside feature cards */
+.help-content div[style*="font-weight: bold"],
+.help-content div[style*="font-weight:bold"],
+.help-content div[style*="font-weight: 600"],
+.help-content div[style*="font-weight:600"],
+.help-content div[style*="font-weight: 700"],
+.help-content div[style*="font-weight:700"] {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Help Content - Description text in cards */
+.help-content div[style*="color: #666"],
+.help-content div[style*="color:#666"],
+.help-content div[style*="color: #888"],
+.help-content div[style*="color:#888"],
+.help-content span[style*="color: #666"],
+.help-content span[style*="color:#666"] {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+/* Help Content - Small info boxes with time/prerequisites */
+.help-content div[style*="background"][style*="gap"] {
+  background-color: hsl(var(--muted)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Badge fade-in animation (opacity only, preserves transform) */
+@keyframes badge-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar with WebQ blue colors */
+.scrollbar-webq::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-webq::-webkit-scrollbar-track {
+  background: hsl(var(--primary) / 0.1);
+  border-radius: 4px;
+}
+
+.scrollbar-webq::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+.scrollbar-webq::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
+
+/* Dark mode scrollbar */
+.dark .scrollbar-webq::-webkit-scrollbar-track {
+  background: hsl(var(--accent) / 0.1);
+}
+
+.dark .scrollbar-webq::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent) / 0.5);
+}
+
+.dark .scrollbar-webq::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.7);
+}
+
+/* Firefox scrollbar */
+.scrollbar-webq {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--primary) / 0.5) hsl(var(--primary) / 0.1);
+}
+
+.dark .scrollbar-webq {
+  scrollbar-color: hsl(var(--accent) / 0.5) hsl(var(--accent) / 0.1);
+}
+
+/* Confetti animations for migration step 4 */
+@keyframes confetti-float-1 {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.8; }
+  25% { transform: translateY(-12px) translateX(4px) rotate(90deg); opacity: 1; }
+  50% { transform: translateY(-6px) translateX(-2px) rotate(180deg); opacity: 0.9; }
+  75% { transform: translateY(-10px) translateX(3px) rotate(270deg); opacity: 1; }
+}
+
+@keyframes confetti-float-2 {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.7; }
+  33% { transform: translateY(-10px) translateX(-5px) rotate(120deg); opacity: 1; }
+  66% { transform: translateY(-4px) translateX(3px) rotate(240deg); opacity: 0.8; }
+}
+
+@keyframes confetti-float-3 {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.6; }
+  50% { transform: translateY(-14px) translateX(2px) rotate(180deg); opacity: 1; }
+}
+
+@keyframes confetti-float-4 {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.7; }
+  40% { transform: translateY(-8px) translateX(-4px) rotate(144deg); opacity: 1; }
+  80% { transform: translateY(-12px) translateX(1px) rotate(288deg); opacity: 0.8; }
+}
+
+@keyframes confetti-float-5 {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.5; }
+  25% { transform: translateY(-6px) translateX(3px) rotate(90deg); opacity: 0.9; }
+  75% { transform: translateY(-10px) translateX(-2px) rotate(270deg); opacity: 0.7; }
+}
+
+@keyframes confetti-float-6 {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.6; }
+  35% { transform: translateY(-11px) translateX(-3px) rotate(126deg); opacity: 1; }
+  70% { transform: translateY(-5px) translateX(4px) rotate(252deg); opacity: 0.8; }
+}
+
+.animate-confetti-1 { animation: confetti-float-1 2.5s ease-in-out infinite; }
+.animate-confetti-2 { animation: confetti-float-2 3s ease-in-out infinite 0.2s; }
+.animate-confetti-3 { animation: confetti-float-3 2.8s ease-in-out infinite 0.4s; }
+.animate-confetti-4 { animation: confetti-float-4 3.2s ease-in-out infinite 0.1s; }
+.animate-confetti-5 { animation: confetti-float-5 2.6s ease-in-out infinite 0.3s; }
+.animate-confetti-6 { animation: confetti-float-6 2.9s ease-in-out infinite 0.5s; }

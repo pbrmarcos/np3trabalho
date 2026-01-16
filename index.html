@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.resend.com https://api.stripe.com https://js.stripe.com; frame-src https://js.stripe.com https://hooks.stripe.com;" />
+    
+    <title>WebQ - Plataforma para Agências Digitais</title>
+    <meta name="description" content="WebQ é uma plataforma unificada para agências digitais que integra vitrine pública, portal do cliente e painel administrativo." />
+    <meta name="author" content="WebQ" />
+    <link rel="canonical" href="https://webq.com.br" />
+
+    <meta property="og:title" content="WebQ - Plataforma para Agências Digitais" />
+    <meta property="og:description" content="Plataforma unificada para agências digitais com site institucional, blog, portal do cliente e CMS." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://webq.com.br" />
+    <meta property="og:image" content="https://webq.com.br/images/hero-bg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@WebQ" />
+    <meta name="twitter:image" content="https://webq.com.br/images/hero-bg.png" />
+
+    <!-- Google Fonts: Inter + Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

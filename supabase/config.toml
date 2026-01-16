@@ -1,0 +1,112 @@
+project_id = "pyjfxrwgwncoasppgmuh"
+
+[functions.create-admin-users]
+verify_jwt = true
+
+[functions.create-checkout]
+verify_jwt = false
+
+[functions.check-subscription]
+verify_jwt = false
+
+[functions.customer-portal]
+verify_jwt = false
+
+[functions.validate-stripe-key]
+verify_jwt = true
+
+[functions.validate-resend-key]
+verify_jwt = true
+
+[functions.download-client-data]
+verify_jwt = false
+
+[functions.send-deletion-code]
+verify_jwt = false
+
+[functions.delete-client-data]
+verify_jwt = false
+
+[functions.send-email]
+verify_jwt = true
+
+[functions.stripe-webhook]
+verify_jwt = false
+
+[functions.scheduled-emails]
+verify_jwt = false
+
+[functions.create-brand-package-checkout]
+verify_jwt = false
+
+[functions.request-password-reset]
+verify_jwt = false
+
+[functions.reset-password]
+verify_jwt = false
+
+[functions.create-design-order-checkout]
+verify_jwt = false
+
+[functions.cleanup-orphan-users]
+verify_jwt = false
+
+[functions.seo-suggestions]
+verify_jwt = true
+
+[functions.confirm-design-order]
+verify_jwt = true
+
+[functions.manage-coupons]
+verify_jwt = true
+
+[functions.get-financial-data]
+verify_jwt = true
+
+[functions.validate-promo-code]
+verify_jwt = false
+
+[functions.get-payment-history]
+verify_jwt = false
+
+[functions.validate-price-ids]
+verify_jwt = true
+
+[functions.create-stripe-prices]
+verify_jwt = true
+
+[functions.generate-sitemap]
+verify_jwt = false
+
+[functions.crypto]
+verify_jwt = true
+
+[functions.migrate-passwords]
+verify_jwt = true
+
+[functions.process-notification-queue]
+verify_jwt = false
+
+[functions.export-database-schema]
+verify_jwt = true
+
+[functions.export-database-data]
+verify_jwt = true
+
+[functions.export-storage-inventory]
+verify_jwt = true
+
+[functions.sync-stripe-products]
+verify_jwt = true
+
+[functions.delete-cookie-data]
+verify_jwt = false
+
+[functions.send-cookie-purge-code]
+verify_jwt = true
+
+[functions.verify-cookie-purge-code]
+verify_jwt = true
+
+[functions.create-design-package-stripe]
+verify_jwt = true
